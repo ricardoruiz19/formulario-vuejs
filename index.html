@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <head>
+  	<link rel="stylesheet" href="src/css/style.css">
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <meta charset="utf-8">
+    <title>formulario</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!--<script src="/dist/build.js"></script>-->
+
+	<!--Título-->
+	<h1>Formulario</h1>
+	<!--Contenedor-->
+	<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'datos')">Datos Básicos</button>
+  <button class="tablinks" onclick="openCity(event, 'pienso')">Que pienso</button>
+</div>
+
+<div id="datos" class="tabcontent">
+  <div class="header-left-bottom agileinfo">
+						<form action="#" method="post">
+							<div class="icon1">
+								<a>Nombre</a></br></br>
+								<i class="fa fa-user" aria-hidden="true"></i>
+								<input  type="text" placeholder="Nombre" required=""/>
+							</div></br>
+							<div class="icon1">
+								<a>Fecha Nacimiento</a></br></br>
+								<i class="fa fa-envelope" aria-hidden="true"></i>
+								<input type="text" placeholder="Fecha Nacimiento" id="datepicker" required=""/>
+							</div></br>
+							<div class="icon1">
+								<a>Barrio</a></br></br>
+								<i class="fa fa-phone" aria-hidden="true"></i>	
+								<input type="text" placeholder="Barrio" required=""/>
+							</div>
+							<table>
+  <tr>    
+    <th>Soltero</th>
+    
+  </tr>
+  <tr>
+    <td></td>
+    <td> <input type="radio" name="gender" value="male">SI</td>
+
+    
+  </tr>
+  <tr>
+    <td></td>
+    <td><input type="radio" name="gender" value="female"> NO</td>
+    <td></td>
+  </tr>
+ 
+</table>
+					</form>	
+
+								
+					</div>
+
+</div>
+
+<div id="pienso" class="tabcontent">
+ 
+
+<h2>Expectativas</h2>
+<textarea rows="4" cols="50" placeholder="Ingrese sus expectativas" style="width: 100%"></textarea>
+
+<h3>Imagen favorita</h3>
+
+	<input type="file" value="Examinar" />
+	<br>
+	<br>
+  <div class="bottom">
+								<input type="submit" value="Enviar" />
+							</div>
+</div>
+
+
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+  </body>
+</html>
